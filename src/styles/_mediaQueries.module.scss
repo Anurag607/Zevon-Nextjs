@@ -1,0 +1,136 @@
+/* -----------------------------------MEDIA QUERIES-------------------------------------*/
+
+@media screen and (max-width: 1000px) {
+    .category {
+        display: grid;
+        gap: 0.5rem;
+        grid-template-areas: 
+        'one two'
+        'three four'
+        'three five'
+        'six six';
+        margin-inline: 0.5rem;
+        height: auto;
+    }
+
+    .footer {
+        height: 40rem;
+        gap: 5%;
+        
+    }
+
+    .footlogo h2 {
+        margin-left: -0.75rem;
+    }
+
+    .contact {
+        padding-top: 0%;
+    }
+
+    .newsletter {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-flow: column;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    .bg1,.bg2,.bg3 {
+        text-align: center;
+    }
+    .txt, .email, .footlogo h2, .contact_email span, .contact_number span {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .nav {
+        display: flex;
+        align-items: center;
+        flex-flow: column;
+        text-align: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap-reverse;
+    }
+
+    .navl {
+        font-size: 1rem;
+    }
+
+    .nav-right {
+        flex-flow: column;
+    }
+
+    .searchbox {
+        transform: translateX(-27.5%);
+    }
+
+    .login {
+        margin: -0.175rem 0 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 6rem;
+        height: 2rem;
+    }
+
+    .logo {
+        font-size: 7rem;
+        margin: 10% 5% 22.5% 0;
+    }
+
+    .shopnow {
+        margin-bottom: 1rem;
+        width: 12.5rem;
+        font-size: 1.25rem;
+    }
+
+    .navicons {
+        padding: 1rem 0 0 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .logo {
+        margin: 12% 5% 22.5% 0;
+    }
+}
+
+@media screen and (max-width: 624px) {
+    .logo {
+        margin: 14% 5% 22.5% 0;
+    }
+
+    .prev, .next {
+        width: 8.5rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .paginator .filter {
+        transform: translateY(4.25rem);
+        left: 45.65%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .cards:hover .card_text {
+        width: 7rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .logo {
+        margin: 21% 5% 22.5% 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .paginator .filter {
+        left: 43.5%;
+    }
+
+    .logo {
+        margin: 22.5% 5% 22.5% 0;
+    }
+}

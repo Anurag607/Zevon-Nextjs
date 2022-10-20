@@ -1,0 +1,60 @@
+/* -----------------------------------TITLE-------------------------------------*/
+
+/* -----------BACKGROUND----------- */
+
+.title {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 110vh;
+    background-attachment: fixed;
+    -webkit-transition: background-image 2s ease-in-out;
+    transition: background-image 2s ease-in-out;
+    scroll-snap-align: start;
+}
+
+/* -----------TITLE PAGE----------- */
+
+.logo {
+    margin: 10% 2% 10% 0;
+    font-size: 8rem;
+    font-family: 'Kaushan Script', cursive;
+    color: #e8e8e8;
+    text-align: center;
+    cursor: default;
+}
+
+.shopcont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100vw;
+}
+
+.shopnow {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.shopnowText {
+    cursor: pointer;
+    padding: 0.25rem 0;
+    border: none;
+    text-align: center;
+    border-radius: 1.25rem;
+    width: 16rem;
+    background: #e8e8e8;
+    color: #37474f;
+    transition: 0.55s;
+    font-size: 1rem;
+    opacity: 1;
+}
+
+.shopnow:hover .shopnowText {
+    border: 1px solid #e8e8e8;
+    background: transparent;
+    color: #e8e8e8;
+}

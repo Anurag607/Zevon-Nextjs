@@ -1,0 +1,29 @@
+/* -----------------------------------SLIDESHOW-------------------------------------*/
+
+.slideshow {
+    display: flex;
+    justify-content: space-evenly;
+    height: 31rem;
+    width: auto;
+}
+
+.slider {
+    display: none;
+    height: 31rem;
+    animation: fade 1.5s linear;
+    transition: all 0.5s;
+}
+
+.slider img {
+    width: 100%;
+}
+
+
+@keyframes fade {
+    from {
+        opacity: 0.5;
+    } 
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,22 @@
+.divider {
+    height: 3.75rem;
+    width: 100vw;
+}
+
+@import "./preloader.module.scss";
+
+@import "./title.module.scss";
+
+@import "./navbar.module.scss";
+
+@import "./categories.module.scss";
+
+@import "./paginator.module.scss";
+
+@import "./shop.module.scss";
+
+@import "./slideshow.module.scss";
+
+@import "./footer.module.scss";
+
+@import "./mediaQueries.module.scss";

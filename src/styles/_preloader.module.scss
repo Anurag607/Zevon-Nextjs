@@ -1,0 +1,33 @@
+.preloader {
+    z-index: 10000;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s;
+    opacity: 1;
+}
+
+.z {
+    background: #010125;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #37474f;
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        position: absolute;
+        top: 11.75%;
+        left: 22.5%;
+        width: 3rem;
+    }
+}

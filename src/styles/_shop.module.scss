@@ -1,0 +1,170 @@
+/* -----------------------------------SHOP-------------------------------------*/
+
+/* Shopping Card Heading */
+.div_title {
+    text-align: center;
+    cursor: default;
+    font-size: 1.5rem;
+    margin: 3% 0 1% 0;
+    font-weight: bold;
+}
+
+.div_subtitle {
+    text-align: center;
+    cursor: default;
+    padding-bottom: 5%;
+}
+
+/* Shopping Card Design */
+
+.cardcont {
+    display: none;
+    animation: fade_cardcont 0.75s ease;
+    transition: all 0.5s;
+}
+
+@keyframes fade_cardcont {
+    from {
+        opacity: 0;
+    } 
+    to {
+        opacity: 1;
+    }
+}
+
+.blog {
+    display: block;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-inline: 2rem;
+}
+
+.c {
+    cursor: pointer;
+    border-radius: 25% 0 25% 0;
+    width: 16rem;
+    box-shadow: 0.4rem 0.4rem 0.75rem #c5c5c5, -0.4rem -0.4rem 0.4rem  #fff;
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.5s;
+    position: relative;
+    filter: brightness(92.25%);
+}
+
+.c:hover {
+    border-radius: 0 25% 0 25%;
+    box-shadow: 0.4rem 0.4rem 0.4rem  #fff, -0.4rem -0.4rem 0.75rem #c5c5c5;
+}
+
+/* Shopping Card Image */
+.c img {
+    transition: 0.5s;
+    display: block;
+}
+
+.c:hover img{
+    transform: scale(1.2);
+    opacity: 0.5;
+}
+
+/* Shopping Card Overlay */
+.cardadd {
+    width: 14%;
+    opacity: 0;
+    text-align: center;
+    transition: 0.5s;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    transition: all 0.5s;
+}
+
+.cardwish {
+    width: 14%;
+    opacity: 0;
+    text-align: center;
+    transition: 0.5s;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    transition: all 0.5s;
+}
+
+.cardadd:hover {
+    filter: brightness(0.8);
+}
+
+.cardwish:hover {
+    filter: brightness(0.8);
+}
+
+.c:hover .cardadd {
+    opacity: 1;
+}
+
+.c:hover .cardwish {
+    opacity: 1;
+}
+
+.overlay1 {
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: all .5s;
+    background: white;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    border-radius: 0 50% 0 0;
+}
+
+.c:hover .overlay1 {
+    height: 70%;
+}
+
+/* Shopping Card Size */
+.size {
+    opacity: 0;
+    position: absolute;
+    top: 12%;
+    right: 10%;
+    transition: all 0.5s;
+}
+
+.size ul {
+    align-items: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    list-style-type: none;
+    text-align: right;
+}
+
+.size li {
+    margin-bottom: 0.6em;
+    display: inline-block;
+}
+
+.size a {
+    font-size: 0.8rem;
+    transition: all 0.5s;
+    text-decoration: none;
+    color: black;
+}
+
+.c:hover .size {
+    opacity: 1;
+}
+
+.size a:hover {
+    text-shadow: 0 0 0.5rem #32A564;
+    color: white;
+}

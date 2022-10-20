@@ -1,0 +1,31 @@
+{
+  "name": "zevon",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.tsx",
+  "author": "Anurag Goswami <maskeddeep@gmail.com>",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@theme-ui/presets": "^0.14.7",
+    "express": "^4.18.1",
+    "next": "12.3.0",
+    "next-connect": "^0.13.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "theme-ui": "^0.14.7"
+  },
+  "devDependencies": {
+    "@types/node": "18.7.18",
+    "dotenv-load": "^2.0.1",
+    "eslint": "8.23.1",
+    "eslint-config-next": "12.3.1",
+    "next-env": "^1.1.1"
+  }
+}

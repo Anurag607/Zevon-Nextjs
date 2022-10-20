@@ -1,0 +1,115 @@
+/* -----------------------------------FOOTER-------------------------------------*/
+
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap-reverse;
+    background: linear-gradient(-45deg, #00093c, #2d0b00);
+    background-repeat: no-repeat;
+    padding-bottom: 10%;
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    height: 25rem;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.footlogo h2 {
+    font-family: "Water Brush", cursive;
+    font-size: 6rem;
+    color: white;
+    cursor: default;
+    margin-bottom: -5%;
+}
+
+.contact {
+    cursor: default;
+    width: 14rem;
+    color: white;
+    padding-top: 18%;
+    margin-left: 7%;
+}
+
+.contact_number {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.contact_number span {
+    text-align: right;
+}
+
+.contact_email {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.contact_email span {
+    text-align: right;
+}
+
+.newsletter {
+    cursor: default;
+    color: white;
+    padding-top: 22%;
+    margin-inline: 0.5rem;
+}
+
+.separator {
+    width: 100%;
+    display: block;
+}
+
+.email {
+    border-radius: 0.5rem;
+    border: none;
+    width: 19rem;
+    height: 1.25rem;
+    text-align: left;
+    padding: 0.5rem;
+    cursor: text;
+    margin-bottom: 0.25rem;
+}
+
+.submit {
+    border-radius: 0.5rem;
+    border: none;
+    width: 10rem;
+    height: 2.5rem;
+    text-align: left;
+    cursor: pointer;
+    background-color: #A64B2A;
+    color:hsl(207, 100%, 98%);
+    transition: 0.3s;
+    text-align: center;
+}
+
+.submit:hover {
+    box-shadow: 0 0 0.5rem #A64B2A;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.contact_ico {
+    width: 2.5rem;
+    height: 2.5rem;
+    filter: brightness(0) invert(1);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.contact_ico:hover {
+    filter: none;
+}

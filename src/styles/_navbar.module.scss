@@ -1,0 +1,106 @@
+/* -----------------------------------NAVBAR-------------------------------------*/
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    padding-top: 1.25rem;
+    margin-inline: 1.25rem;
+}
+
+.nav-left {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    list-style-type: none;
+    align-items: center;
+    gap: 2rem;
+    margin-left: 1rem;
+    margin-top: 0.575rem;
+}
+
+.nav-right {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.navl {
+    font-size: 1.3rem;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.searchbox {
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+    margin-top: 0.6rem;
+    width: auto;
+}
+
+.searchbox > input {
+    border-radius: 2rem;
+    border: none;
+    height: 1.75rem;
+    text-align: right;
+    width: 0;
+    color: black;
+    transition: all 0.5s;
+    margin-inline: 0.5rem;
+    display: none;
+    opacity: 0;
+}
+
+.search-img {
+    width: 2rem;
+    filter: brightness(0) invert(1);
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-top: 0.225rem;
+    z-index: 20;
+}
+
+.navicons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    gap: 1.5rem;
+    padding: 1rem 0 0 1.25rem;
+    transition: all 0.5s;
+}
+
+.navimg {
+    width: 2rem;
+    filter: brightness(0) invert(1);
+    transition: all 0.3s;
+}
+
+.login {
+    cursor: pointer;
+    margin: -0.45rem 1rem 0 0.5rem;
+    border: 0.1rem solid #fff;
+    text-align: center;
+    border-radius: 50rem;
+    width: 8rem;
+    height: 1.75rem;
+    background: transparent;
+    color: #fff;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+.login:hover {
+    background: #e8e8e8;
+    color: #37474f;
+}
