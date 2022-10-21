@@ -3,7 +3,7 @@
 const paginator = () => {
     var next = document.querySelector("#next");
     var prev = document.querySelector("#prev");
-    var card = document.querySelectorAll(".cardcont");
+    var card = document.querySelectorAll(".cardCont");
     var carddivs = card.length;
     var cardindex = 0;
 

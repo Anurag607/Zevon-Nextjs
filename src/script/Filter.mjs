@@ -1,17 +1,17 @@
 // Filter Menu...........................
 
 const productFilter = () => {
-    var filterImg = document.querySelector("#filter");
-    var filterOff = document.querySelector("#filterOff");
-    var filter = document.querySelector("#filtercont");
-    var filtermenu = document.querySelector("#items-wrapper");
-    var menuitems = document.querySelectorAll(".item-cont");
-    var dropdowns = document.querySelectorAll(".Dropdowns");
-    var colormenu = document.querySelectorAll(".FilterColors");
-    var colortxt = document.querySelectorAll(".ColorTxt");
-    var categorymenu = document.querySelectorAll(".FilterCategories");
-    var cattxt = document.querySelectorAll(".CatTxt");
-    var flag = 0, target = -1, prev = -1;
+    let filterImg = document.querySelector("#filter");
+    let filterOff = document.querySelector("#filterOff");
+    let filter = document.querySelector("#filtercont");
+    let filtermenu = document.querySelector("#items-wrapper");
+    let menuitems = document.querySelectorAll(".itemCont");
+    let dropdowns = document.querySelectorAll(".Dropdowns");
+    let colormenu = document.querySelectorAll(".FilterColors");
+    let colortxt = document.querySelectorAll(".ColorTxt");
+    let categorymenu = document.querySelectorAll(".FilterCategories");
+    let cattxt = document.querySelectorAll(".CatTxt");
+    let flag = 0, target = -1, prev = -1;
 
     for (let i = 0; i < dropdowns.length; i++) {
         dropdowns[i].style.display = "none";
@@ -34,24 +34,13 @@ const productFilter = () => {
         if (filter.dataset.toggle === "off") {
             filter.dataset.toggle = "on";
             filterImg.style.opacity = "0";
+            filterOff.style.display = "block";
+            setTimeout(() => {
+                filterImg.style.display = "none";
+            }, 150);
             setTimeout(() => {
                 filterOff.style.opacity = "1";
-            }, 300);
-        }
-
-        else {
-            filter.dataset.toggle = "off";
-            filterOff.style.opacity = "0";
-            setTimeout(() => {
-                filterImg.style.opacity = "1";
-            }, 300);
-        }
-    }
-
-    filter.onclick = () => {
-
-        if (filter.dataset.toggle === "off") {
-            filter.dataset.toggle = "on";
+            }, 500);
             filtermenu.style.width = "27%";
             filtermenu.style.opacity = "1";
             
@@ -85,6 +74,12 @@ const productFilter = () => {
 
         else {
             filter.dataset.toggle = "off";
+            filterOff.style.opacity = "0";
+            filterImg.style.display = "block";
+            setTimeout(() => {
+                filterOff.style.display = "none";
+                filterImg.style.opacity = "1";
+            }, 300);
             filtermenu.style.width = "0";
             filtermenu.style.opacity = "0";
             filtermenu.children[0].style.opacity = "0";
@@ -115,7 +110,6 @@ const productFilter = () => {
         menuitem.onclick = function () {
 
             target = Array.from(this.parentElement.children).indexOf(this) - 1;
-            // alert(`prev Flag: ${flag}, prev Index: ${prev}, current Index: ${target}`);
 
             if (prev === target) flag++;
 
@@ -127,8 +121,9 @@ const productFilter = () => {
             for (let i = 0; i < menuitems.length; i++) {
 
                 if (i === target) {
-                    var currentMenu = document.querySelector(`.dropdown.${menuitems[i].children[0].dataset.type}`);
+                    let currentMenu = document.querySelector(`.Dropdowns.${menuitems[i].children[0].dataset.type}`);
                     menuitems[i].dataset.toggle = "on";
+                    console.log(`.Dropdown.${menuitems[(i+1)%2].children[0].dataset.type}`)
                     filtermenu.style.width = "100%";
                     menuitems[i].style.border = "1px solid #37474f";
                     menuitems[i].style.padding = "0.5rem";
@@ -144,7 +139,7 @@ const productFilter = () => {
                 }
 
                 else {
-                    var otherMenu = document.querySelector(`.dropdown.${menuitems[i].children[0].dataset.type}`);
+                    let otherMenu = document.querySelector(`.Dropdowns.${menuitems[i].children[0].dataset.type}`);
                     menuitems[i].dataset.toggle = "off";
                     menuitems[i].style.border = "none";
                     menuitems[i].style.padding = "0";
@@ -171,12 +166,11 @@ const productFilter = () => {
                 }, 250);
                 flag = 0;
             }
-            // alert(`current Flag: ${flag}`);
         }
 
     });
 
-    var categoryImg = document.querySelectorAll(".categories img");
+    let categoryImg = document.querySelectorAll(".categories img");
 
 
     categoryImg.forEach(img => {

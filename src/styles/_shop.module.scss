@@ -49,6 +49,7 @@
     cursor: pointer;
     border-radius: 25% 0 25% 0;
     width: 16rem;
+    height: auto;
     box-shadow: 0.4rem 0.4rem 0.75rem #c5c5c5, -0.4rem -0.4rem 0.4rem  #fff;
     overflow: hidden;
     text-align: center;
@@ -63,14 +64,22 @@
 }
 
 /* Shopping Card Image */
-.c img {
+.shopimgCont {
     transition: 0.5s;
     display: block;
 }
 
-.c:hover img{
+.c:hover .shopimgCont {
     transform: scale(1.2);
     opacity: 0.5;
+}
+
+.shopimgCont {
+    width: 100%;
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* Shopping Card Overlay */

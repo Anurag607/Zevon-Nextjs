@@ -13,9 +13,9 @@ const main = () => {
 
     search()
 
-    // paginator()
+    paginator()
 
-    // productFilter()
+    productFilter()
 }
 
 export default main
