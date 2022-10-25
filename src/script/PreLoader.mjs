@@ -2,7 +2,7 @@
 
 const preLoader = () => {
 
-    var preLoader = document.querySelector('#preloader');
+    let preLoader = document.querySelector('#preloader');
 
     window.addEventListener('load', () => {
 

@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Michroma&family=Pacifico&display=swap');
+
+@mixin flex($dir : row, $gap: 0rem) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: center;
+    align-items: center;
+    gap: $gap;
+}
+
+.loginWrapper {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('../../public/loginBg1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include flex;
+    div {
+        z-index: 1;
+        width: 30vw;
+        height: 95vh;
+        border-radius: 0.75rem;
+        background-color: #ffffff;
+        @include flex($dir: row, $gap: 0rem);
+        form {
+            width: 100%;
+            @include flex($dir: column, $gap: 1.35rem);
+            h2 {
+                font-family: 'Lobster', cursive;
+                // font-family: 'Michroma', sans-serif;
+                font-size: 3rem;
+                margin-bottom: 1rem;
+                color: rgba(0,0,0,0.75);
+                cursor: default;
+            }
+            .warning {
+                display: none;
+                border: transparent;
+                outline: none;
+                background: red;
+                color: #fff;
+                padding: 0.25rem 0.5rem;
+                font-size: 0.75rem;
+                border-radius: 0.25rem;
+                cursor: default;
+            }
+            span {
+                @include flex($dir: row, $gap: 1rem);
+                font-size: 1.1rem;
+                font-family: 'Poppins', sans-serif;
+            }
+            span:nth-child(1) {
+                padding-bottom: 0.25rem;
+                border-top: transparent;
+                border-left: transparent;
+                border-right: transparent;
+                border-bottom: 0.05rem solid rgba(0,0,0,0.25);
+            }
+            .toSignup {
+                @include flex($gap : 0.5rem);
+                margin-top: 5rem;
+                font-size: 0.75rem;
+                font-family: 'Poppins', sans-serif;
+                cursor: default;
+            }
+            label {
+                @include flex($dir : column, $gap : 0.5rem);
+                align-items: flex-start;
+                .user {
+                    @include flex;
+                    width: auto;
+                    height: auto;
+                    span {
+                        width: 2rem;
+                        height: 1.95rem;
+                        background-image: url('../../public/user.svg');
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        filter: brightness(0) opacity(0.75);
+                        border-top: transparent;
+                        border-left: transparent;
+                        border-right: 0.05rem solid rgba(0,0,0,0.25);
+                        border-bottom: transparent;
+                    }
+                    input {
+                        outline: none;
+                        padding: 0.5rem 2rem 0.5rem 0.5rem;
+                        width: 15rem;
+                        border-top: transparent;
+                        border-left: transparent;
+                        border-right: transparent;
+                        border-bottom: transparent;
+                        border-width: 0.05rem;
+                        border-radius: 0.5rem;
+                        margin-left: 0.25rem;
+                    }
+                }
+                .pass {
+                    @include flex;
+                    width: auto;
+                    height: auto;
+                    span {
+                        width: 2rem;
+                        height: 1.9rem;
+                        background-image: url('../../public/lock.png');
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        filter: brightness(0) opacity(0.75);
+                        border-top: transparent;
+                        border-left: transparent;
+                        border-right: 0.05rem solid rgba(0,0,0,0.25);
+                        border-bottom: transparent;
+                    }
+                    input {
+                        outline: none;
+                        padding: 0.5rem 2rem 0.5rem 0.5rem;
+                        width: 15rem;
+                        border-top: transparent;
+                        border-left: transparent;
+                        border-right: transparent;
+                        border-bottom: transparent;
+                        border-width: 0.05rem;
+                        border-radius: 0.5rem;
+                        margin-left: 0.25rem;
+                    }
+                }
+                span {
+                    @include flex($gap : 0.25rem);
+                    justify-content: flex-end;
+                    font-size: 0.75rem;
+                    width: 20rem;
+                }
+            }
+            section {
+                width: auto;
+                height: auto;
+                @include flex($dir : column, $gap : 0.75rem);
+                p {
+                    font-size: 0.75rem;
+                    color: rgba(0,0,0,0.50);
+                    cursor: default;
+                }
+                div {
+                    width: auto;
+                    height: auto;
+                    @include flex($gap : 1rem);
+                    a {
+                        width: 2rem;
+                        height: 2rem;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                    }
+                    a:nth-child(1) {
+                        background-image: url('../../public/google.png');
+                    }
+                    a:nth-child(2) {
+                        background-image: url('../../public/instagram.png');
+    
+                    }
+                    a:nth-child(3) {
+                        background-image: url('../../public/f.svg');
+                    }
+                }
+            }
+        }
+    }
+}
+
+.loginWrapper::after {
+    content: '';
+    background-color: rgba(0,0,0,0.69);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+
+.loginSubmit {
+    font-size: 1rem;
+    font-family: 'Poppins';
+    color: #fff;
+    background: linear-gradient(106.7deg, rgb(251, 0, 145) -2.6%, rgb(251, 134, 145) 31%, rgb(251, 158, 145) 45.8%, rgb(251, 218, 145) 100.1%);
+    padding: 0.5rem 2rem;
+    outline: none;
+    border: none !important;
+    width: 21rem !important;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    background-size: 200% 200%;
+}
+
+@keyframes animatedGradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.loginSubmit:hover {
+    animation: animatedGradient 5s ease infinite;
+}
+
+.loginLinks {
+    color: #fa86c4;
+}

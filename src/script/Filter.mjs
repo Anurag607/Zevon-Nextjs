@@ -108,6 +108,7 @@ const productFilter = () => {
     menuitems.forEach(menuitem => {
 
         menuitem.onclick = function () {
+            let currentMenu, otherMenu;
 
             target = Array.from(this.parentElement.children).indexOf(this) - 1;
 
@@ -121,9 +122,8 @@ const productFilter = () => {
             for (let i = 0; i < menuitems.length; i++) {
 
                 if (i === target) {
-                    let currentMenu = document.querySelector(`.Dropdowns.${menuitems[i].children[0].dataset.type}`);
+                    currentMenu = document.querySelector(`.Dropdowns.${menuitems[i].children[0].dataset.type}`);
                     menuitems[i].dataset.toggle = "on";
-                    console.log(`.Dropdown.${menuitems[(i+1)%2].children[0].dataset.type}`)
                     filtermenu.style.width = "100%";
                     menuitems[i].style.border = "1px solid #37474f";
                     menuitems[i].style.padding = "0.5rem";
@@ -139,7 +139,7 @@ const productFilter = () => {
                 }
 
                 else {
-                    let otherMenu = document.querySelector(`.Dropdowns.${menuitems[i].children[0].dataset.type}`);
+                    otherMenu = document.querySelector(`.Dropdowns.${menuitems[i].children[0].dataset.type}`);
                     menuitems[i].dataset.toggle = "off";
                     menuitems[i].style.border = "none";
                     menuitems[i].style.padding = "0";
