@@ -10,7 +10,10 @@ export default function Page() {
 
     return(
         <div className={styles.wrapper}>
-            
+            <section className={styles.itemImg}></section>
+            <section className={styles.content}>
+                
+            </section>
         </div>
     )
 }
