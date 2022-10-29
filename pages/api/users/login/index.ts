@@ -22,7 +22,7 @@ handler.get('/api/users/login', async(req,res) => {
 handler.post('/api/users/login', async(req, res) => {
     let userData:string = '';
     try {
-        userData = await readFile(new URL('./src/data/data.json', import.meta.url), 'utf-8')
+        userData = await readFile(new URL('/src/data/data.json', import.meta.url), 'utf-8')
     } catch(err) {
         console.error(err.message)
         res.send('Error while logging in (R).')

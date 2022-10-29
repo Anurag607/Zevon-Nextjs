@@ -22,7 +22,7 @@ handler.get('/api/users/signup', async(req,res) => {
 handler.post('/api/users/signup', async(req, res) => {
     let userData:string = '';
     try {
-        userData = await readFile('./src/data/data.json', 'utf-8')
+        userData = await readFile(new URL('/src/data/data.json', import.meta.url), 'utf-8')
     } catch(err) {
         console.error(err.message)
         res.send('Error while signing in (R).')
@@ -34,7 +34,7 @@ handler.post('/api/users/signup', async(req, res) => {
     } else {
         users[req.body.username] = req.body.password
         try {
-            await writeFile('./src/data/data.json', JSON.stringify(users))
+            await writeFile(new URL('/src/data/data.json', import.meta.url), JSON.stringify(users))
             res.send("success")
         } catch(err) {
             console.error(err.message)
