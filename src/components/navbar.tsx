@@ -12,10 +12,26 @@ export default function NavBar(props : Object) {
     return (
         <nav className = {styles.nav}>
             <div className={styles["nav-left"]}>
-                <li><a className= {styles.navl} href="#">Home</a></li>
-                <li><a className= {styles.navl} href="#">Blog</a></li>
-                <li><a className= {styles.navl} href="#">About</a></li>
-                <li><a className= {styles.navl} href="#">Contact</a></li>
+                <li>
+                    <Link href='/home' passHref>
+                        <a className= {styles.navl}>Home</a>
+                    </Link>
+                </li>
+                <li>
+                    <Link href='#' passHref>
+                        <a className= {styles.navl}>Blog</a>
+                    </Link>
+                </li>
+                <li>
+                    <Link href='#' passHref>
+                        <a className= {styles.navl}>About</a>
+                    </Link>
+                </li>
+                <li>
+                    <Link href='#' passHref>
+                        <a className= {styles.navl}>Contact</a>
+                    </Link>
+                </li>
             </div>
             <div className={styles["nav-right"]}>
                 <div className={styles["searchbox"]} id="searchbox">

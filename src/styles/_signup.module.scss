@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Michroma&family=Pacifico&display=swap');
+/* ----------------------------------SIGN UP-------------------------------------*/
 
 @mixin flex($dir : row, $gap: 0rem) {
     display: flex;
@@ -8,7 +8,8 @@
     gap: $gap;
 }
 
-@mixin bg() {
+@mixin bg($url : '') {
+    background-image: url($url);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -23,10 +24,7 @@
     section:nth-child(1) {
         width: 60vw;
         height: 100vh;
-        background-image: url('../../public/casual1.jpg');
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
+        @include bg($url : '../../public/casual1.jpg');
     }
     section:nth-child(2) {
         z-index: 1;
@@ -84,10 +82,7 @@
                     span {
                         width: 2rem;
                         height: 1.95rem;
-                        background-image: url('../../public/user (1).png');
-                        background-position: center;
-                        background-repeat: no-repeat;
-                        background-size: cover;
+                        @include bg($url : '../../public/user (1).png');
                         filter: brightness(0) opacity(0.75);
                         border-top: transparent;
                         border-left: transparent;
@@ -113,10 +108,7 @@
                     span {
                         width: 2rem;
                         height: 1.95rem;
-                        background-image: url('../../public/email.png');
-                        background-position: center;
-                        background-repeat: no-repeat;
-                        background-size: cover;
+                        @include bg($url : '../../public/email.png');
                         filter: brightness(0) opacity(0.75);
                         border-top: transparent;
                         border-left: transparent;
@@ -144,10 +136,7 @@
                     span {
                         width: 2rem;
                         height: 1.9rem;
-                        background-image: url('../../public/lock.png');
-                        background-position: center;
-                        background-repeat: no-repeat;
-                        background-size: cover;
+                        @include bg($url : '../../public/lock.png');
                         filter: brightness(0) opacity(0.75);
                         border-top: transparent;
                         border-left: transparent;

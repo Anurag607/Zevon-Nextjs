@@ -6,7 +6,7 @@ import Image from 'next/image'
 import styles from '../../src/styles/index.module.css'
 import { preLoader } from '../../src/script/PreLoader.mjs'
 
-export default function NavBar() {
+export default function Footer() {
 
     return (
         <footer className={`${styles['main']} ${styles['footer']}`}>

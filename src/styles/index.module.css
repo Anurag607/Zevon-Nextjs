@@ -1,11 +1,12 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Michroma&family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lobster&family=Michroma&family=Pacifico&display=swap");
 .divider {
   height: 3.75rem;
   width: 100vw;
 }
 
+/* -----------------------------------PRELOADER-------------------------------------*/
 .preloader {
   z-index: 10000;
   width: 100vw;
@@ -40,6 +41,7 @@
   width: 3rem;
 }
 
+/* -----------------------------------LOGIN-------------------------------------*/
 .loginWrapper {
   width: 100vw;
   height: 100vh;
@@ -302,6 +304,7 @@
   color: #fa86c4;
 }
 
+/* ----------------------------------SIGN UP-------------------------------------*/
 .signupWrapper {
   width: 100vw;
   height: 100vh;
@@ -404,8 +407,8 @@
   height: 1.95rem;
   background-image: url("../../public/user (1).png");
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
   filter: brightness(0) opacity(0.75);
   border-top: transparent;
   border-left: transparent;
@@ -437,8 +440,8 @@
   height: 1.95rem;
   background-image: url("../../public/email.png");
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
   filter: brightness(0) opacity(0.75);
   border-top: transparent;
   border-left: transparent;
@@ -472,8 +475,8 @@
   height: 1.9rem;
   background-image: url("../../public/lock.png");
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
   filter: brightness(0) opacity(0.75);
   border-top: transparent;
   border-left: transparent;
@@ -780,6 +783,10 @@
 .catImg {
   width: 100%;
   transition: all 0.8s;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: block;
 }
 
 .cards:hover .catImg {
@@ -854,7 +861,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 .paginator div {
   height: auto;
@@ -968,7 +974,6 @@
   top: -50%;
   left: 0;
   opacity: 0;
-  gap: 1rem;
 }
 .items-wrapper section:first-child {
   position: absolute;
@@ -1044,19 +1049,17 @@
   width: 60%;
   height: 87.5%;
   display: none;
-  grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(4, 1fr);
   gap: 5rem;
   opacity: 0;
   transition: all 0.5s;
 }
 .dropdown div {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   gap: 0.5rem;
 }
 
@@ -1064,12 +1067,14 @@
   cursor: pointer;
   box-shadow: 0px 0.4rem 0.75rem #c5c5c5, 0px -0.4rem 0.75rem #fff;
   border-radius: 50%;
-  border: 4px solid #e8e8e8;
+  border: 0.25rem solid #e8e8e8;
   transition: all 0.5s;
+  width: 3.75rem;
+  height: 3.75rem;
 }
 
 .colors:hover {
-  transform: scale(1.2);
+  scale: 1.2;
 }
 
 .color-txt,
@@ -1078,9 +1083,17 @@
 }
 
 .categories {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   cursor: pointer;
   border: 4px solid #e8e8e8;
   transition: all 0.5s;
+}
+.categories span {
+  overflow: visible !important;
 }
 .categories img {
   transition: all 0.5s;
@@ -1088,9 +1101,114 @@
 }
 
 .categories:hover img {
-  transform: scale(1.2) absolute;
+  scale: 1.2;
 }
 
+@media screen and (max-width: 1000px) {
+  .items-wrapper {
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vw;
+    width: 100vw !important;
+    height: 0vh;
+    top: 150%;
+    left: 0;
+  }
+  .items-wrapper section:first-child {
+    left: 0;
+    top: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  }
+  .items-wrapper section:last-child {
+    width: 65vw;
+    height: 0%;
+    top: 35%;
+    left: 15.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+  }
+  .item-cont-range {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .item-cont-range label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 15rem;
+  }
+  .dropdown {
+    width: auto;
+  }
+}
+@media screen and (max-width: 950px) {
+  .colors {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+}
+@media screen and (max-width: 850px) {
+  .dropdown {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .colors {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  .next, .prev {
+    width: 8rem;
+    height: 2rem;
+    font-size: 1.65rem;
+  }
+  .paginator .filtercont {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 1rem;
+  }
+  .paginator .filter {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .paginator .filterOff {
+    width: 1rem;
+    height: 1rem;
+  }
+  .colors {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .dropdown {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 450px) {
+  .paginator {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    gap: 2rem;
+  }
+}
 /* -----------------------------------SHOP-------------------------------------*/
 /* Shopping Card Heading */
 .div_title {
@@ -1226,7 +1344,7 @@
   width: 100%;
   height: 0;
   transition: all 0.5s;
-  background: white;
+  background-color: #fff !important;
   left: 0;
   right: 0;
   bottom: 0;
@@ -1449,6 +1567,222 @@
   gap: 0.5rem;
 }
 
+/* -----------------------------------ITEM_PAGE-------------------------------------*/
+.itemWrapper {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  justify-content: flex-start;
+  background-color: #ffffff;
+}
+.itemWrapper .nav {
+  width: 96.5vw;
+  padding-left: 5rem;
+  padding-right: 6.5rem;
+  gap: 0;
+}
+.itemWrapper .nav .nav-left li a {
+  padding: 0.25rem 0.5rem;
+  color: rgba(0, 0, 0, 0.75);
+}
+.itemWrapper .nav .nav-left li a:hover {
+  border-radius: 0.5rem;
+  color: #ffffff;
+  filter: none;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.itemWrapper .nav .nav-right a {
+  color: #000;
+  filter: brightness(0.25);
+  transition: all 0.3s;
+}
+.itemWrapper .nav .nav-right a:hover {
+  color: #ffffff;
+  filter: none;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.itemWrapper .nav .nav-right .searchbox {
+  filter: brightness(0.25);
+}
+.itemWrapper .nav .navico {
+  padding: 0.25rem;
+}
+.itemWrapper .nav .navico:hover {
+  border-radius: 0.5rem;
+}
+.itemWrapper .itemContent {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  padding: 0 5rem;
+  background-color: #ffffff;
+}
+.itemWrapper .itemContent .itemImg {
+  width: 35vw;
+  height: 95vh;
+  background-image: url("../../public/clothes/m5.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.itemWrapper .itemContent .itemDetails {
+  width: 50vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+.itemWrapper .itemContent .itemDetails .itemName {
+  width: 20rem;
+  height: auto;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0rem;
+}
+.itemWrapper .itemContent .itemDetails .itemPrice {
+  width: 10rem;
+  height: auto;
+  font-size: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0rem;
+}
+.itemWrapper .itemContent .itemDetails .itemColors {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+.itemWrapper .itemContent .itemDetails .itemColors span {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.itemWrapper .itemContent .itemDetails .itemColors .Color1 {
+  background-color: #ffff9e;
+}
+.itemWrapper .itemContent .itemDetails .itemColors .Color2 {
+  background-color: #f8bbd0;
+}
+.itemWrapper .itemContent .itemDetails .itemSizes {
+  width: auto;
+  height: auto;
+}
+.itemWrapper .itemContent .itemDetails .itemSizes ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+.itemWrapper .itemContent .itemDetails .itemSizes ul li {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0rem;
+  text-align: center;
+  transition: all 0.3s;
+}
+.itemWrapper .itemContent .itemDetails .itemSizes ul li:hover {
+  background-color: #32de84;
+  color: #e8e8e8;
+  scale: 1.1;
+}
+.itemWrapper .itemContent .itemDetails .addItem {
+  width: 25vw;
+  height: 5vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.25rem;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  background-color: #32de84 !important;
+  border-color: transparent;
+  outline: none;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.itemWrapper .itemContent .itemDetails .addItem span {
+  display: block;
+  width: 2.25rem;
+  height: 2.25rem;
+  background-image: url("../../public/shopnow.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: brightness(0) invert(1);
+  transition: all 0.3s;
+}
+.itemWrapper .itemContent .itemDetails .addItem:hover {
+  font-size: 1.5rem;
+}
+.itemWrapper .itemContent .itemDetails .addItem:hover span {
+  scale: 1.1;
+}
+.itemWrapper .itemContent .itemDetails .addtoWish {
+  width: 25vw;
+  height: 5vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-family: "Poppins", sans-serif;
+  color: #37474f;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.itemWrapper .itemContent .itemDetails .addtoWish span {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  background-image: url("../../public/like.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 0.3s;
+}
+.itemWrapper .itemContent .itemDetails .addtoWish:hover {
+  scale: 1.1;
+}
+.itemWrapper .footer {
+  width: 100vw;
+  height: auto;
+}
+
 /* -----------------------------------MEDIA QUERIES-------------------------------------*/
 @media screen and (max-width: 1000px) {
   .category {
@@ -1511,7 +1845,7 @@
   }
   .logo {
     font-size: 7rem;
-    margin: 10% 5% 22.5% 0;
+    margin: 10% 5% 12.5% 0;
   }
   .shopnow {
     margin-bottom: 1rem;
@@ -1524,38 +1858,42 @@
 }
 @media screen and (max-width: 800px) {
   .logo {
-    margin: 12% 5% 22.5% 0;
+    margin: 12% 5% 15% 0;
+  }
+}
+@media screen and (max-width: 700px) {
+  .logo {
+    margin: 12% 5% 15% 0 !important;
   }
 }
 @media screen and (max-width: 624px) {
   .logo {
-    margin: 14% 5% 22.5% 0;
+    margin: 14% 5% 20% 0;
   }
   .prev, .next {
     width: 8.5rem;
   }
 }
 @media screen and (max-width: 550px) {
-  .paginator .filter {
-    transform: translateY(4.25rem);
-    left: 45.65%;
+  .logo {
+    margin: 21% 5% 22.5% 0 !important;
   }
 }
 @media screen and (max-width: 500px) {
   .cards:hover .card_text {
     width: 7rem;
   }
+  .logo {
+    margin: 21% 5% 25% 0 !important;
+  }
 }
 @media screen and (max-width: 450px) {
   .logo {
-    margin: 21% 5% 22.5% 0;
+    margin: 21% 5% 25% 0 !important;
   }
 }
 @media screen and (max-width: 400px) {
-  .paginator .filter {
-    left: 43.5%;
-  }
   .logo {
-    margin: 22.5% 5% 22.5% 0;
+    margin: 22.5% 5% 32.5% 0 !important;
   }
 }/*# sourceMappingURL=index.module.css.map */

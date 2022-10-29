@@ -50,6 +50,10 @@
 .catImg {
     width: 100%;
     transition: all 0.8s;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
 }
 
 .cards:hover .catImg {

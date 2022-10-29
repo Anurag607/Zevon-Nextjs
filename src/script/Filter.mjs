@@ -12,6 +12,9 @@ const productFilter = () => {
     let categorymenu = document.querySelectorAll(".FilterCategories");
     let cattxt = document.querySelectorAll(".CatTxt");
     let flag = 0, target = -1, prev = -1;
+    let mediaQuery = window.matchMedia('(max-width: 1000px)')
+    let mediaQuery1 = window.matchMedia('(max-width: 850px)')
+    let mediaQuery2 = window.matchMedia('(max-width: 500px)')
 
     for (let i = 0; i < dropdowns.length; i++) {
         dropdowns[i].style.display = "none";
@@ -31,7 +34,7 @@ const productFilter = () => {
 
     filter.onclick = () => {
 
-        if (filter.dataset.toggle === "off") {
+if (filter.dataset.toggle === "off") {
             filter.dataset.toggle = "on";
             filterImg.style.opacity = "0";
             filterOff.style.display = "block";
@@ -41,7 +44,8 @@ const productFilter = () => {
             setTimeout(() => {
                 filterOff.style.opacity = "1";
             }, 500);
-            filtermenu.style.width = "27%";
+            if (mediaQuery.matches) filtermenu.style.height = '45vh'
+            else filtermenu.style.width = "27%";
             filtermenu.style.opacity = "1";
             
             filterImg.style.opacity = "0";
@@ -57,7 +61,7 @@ const productFilter = () => {
 
                 menuitems.onmouseover = function () {
                     if (this.dataset.toggle === "off") {
-                        this.style.border = "1px solid #37474f";
+                        this.style.border = "0.075rem solid #37474f";
                         this.style.padding = "0.5rem";
                     }
                 }
@@ -70,7 +74,7 @@ const productFilter = () => {
                 }
 
             });
-        }
+        }        
 
         else {
             filter.dataset.toggle = "off";
@@ -80,7 +84,8 @@ const productFilter = () => {
                 filterOff.style.display = "none";
                 filterImg.style.opacity = "1";
             }, 300);
-            filtermenu.style.width = "0";
+            if (mediaQuery.matches) filtermenu.style.height = '0'
+            else filtermenu.style.width = "0";
             filtermenu.style.opacity = "0";
             filtermenu.children[0].style.opacity = "0";
 
@@ -124,13 +129,19 @@ const productFilter = () => {
                 if (i === target) {
                     currentMenu = document.querySelector(`.Dropdowns.${menuitems[i].children[0].dataset.type}`);
                     menuitems[i].dataset.toggle = "on";
-                    filtermenu.style.width = "100%";
-                    menuitems[i].style.border = "1px solid #37474f";
+                    if(mediaQuery2.matches) filtermenu.style.height = "275vh";
+                    else if(mediaQuery1.matches) filtermenu.style.height = "195vh";
+                    else if(mediaQuery.matches) filtermenu.style.height = "195vh";
+                    else filtermenu.style.width = "100%";
+                    menuitems[i].style.border = "0.075rem solid #37474f";
                     menuitems[i].style.padding = "0.5rem";
 
                     setTimeout(() => {
                         filtermenu.children[1].style.opacity = "1";
-                        filtermenu.children[1].style.width = "60%";
+                        if (mediaQuery2.matches) filtermenu.children[1].style.height = "162.5vh";
+                        else if(mediaQuery1.matches) filtermenu.children[1].style.height = "117.5vh";
+                        else if(mediaQuery.matches) filtermenu.children[1].style.height = "88.5vh";
+                        else filtermenu.children[1].style.width = "60%";
                     }, 250);
                     currentMenu.style.display = "grid";
                     setTimeout(() => {
@@ -158,7 +169,8 @@ const productFilter = () => {
                 currentMenu.style.opacity = "0";
                 setTimeout(() => {
                     currentMenu.style.display = "none";
-                    filtermenu.style.width = "27%";
+                    if (mediaQuery.matches) filtermenu.style.height = '45vh'
+                    else filtermenu.style.width = "27%";
                 }, 100);
                 setTimeout(() => {
                     filtermenu.children[1].style.opacity = "0";

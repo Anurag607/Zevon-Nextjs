@@ -3,6 +3,8 @@
     width: 100vw;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 @import "./preloader.module.scss";
 
 @import "./login.module.scss";
@@ -22,5 +24,7 @@
 @import "./slideshow.module.scss";
 
 @import "./footer.module.scss";
+
+@import "./itemPage.module.scss";
 
 @import "./mediaQueries.module.scss";

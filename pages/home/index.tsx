@@ -7,6 +7,7 @@ import styles from '../../src/styles/index.module.css'
 import main from '../../src/script/main.mjs'
 import NavBar  from '../../src/components/navbar'
 import Footer from '../../src/components/footer'
+import Link from 'next/link'
 
 const BlogGen = (props: any) => {
     let src = `/${props.img}.jpg`
@@ -47,18 +48,22 @@ const CardGen = (props: any) => {
     const size = ['S', 'M', 'L', 'XL', 'XXL']
     return (
         <div className={styles.c}>
-            <div className={styles.shopimgCont} style={{backgroundImage: `url(${src})`}}>
-                <Image src={src} alt="Image" width={256} height={320} layout='intrinsic' />
-            </div>
-            <a href="#" className={styles["cardadd"]}><Image src="/add.svg" alt="ADD TO CART" width={43} height={43} layout='intrinsic' /></a>
-            <a href="#" className={styles["cardwish"]}><Image src="/wish.svg" alt="ADD TO WISHLIST" width={43} height={43} layout='intrinsic' /></a>
-            <div className={styles["size"]}>
-                <ul>
-                    {size.map((el,i) => {
-                        return <Sizegen key={i} size={el} />
-                    })}
-                </ul>
-            </div>
+            <Link href='/items/[id]' as={`/items/${props.img}`}>
+                <div>
+                    <div className={styles.shopimgCont} style={{backgroundImage: `url(${src})`}}>
+                        <Image src={src} alt="Image" width={256} height={320} layout='intrinsic' />
+                    </div>
+                    <a href="#" className={styles["cardadd"]}><Image src="/add.svg" alt="ADD TO CART" width={43} height={43} layout='intrinsic' /></a>
+                    <a href="#" className={styles["cardwish"]}><Image src="/wish.svg" alt="ADD TO WISHLIST" width={43} height={43} layout='intrinsic' /></a>
+                    <div className={styles["size"]}>
+                        <ul>
+                            {size.map((el,i) => {
+                                return <Sizegen key={i} size={el} />
+                            })}
+                        </ul>
+                    </div>
+                </div>
+            </Link>
         </div>
     )
 }
@@ -120,8 +125,8 @@ const CategoryGen = (props: any) => {
     } else { src = `/${props.img}.webp` }
     return (
         <div className={styles["cards"]}>
-            <div className={styles.catImg}>
-                <Image src={src} alt='category' width={props.width} height={props.height} layout='intrinsic' />
+            <div className={styles.catImg} style={{backgroundImage: `url(${src})`}}>
+                <Image src={src} alt='category' width={props.width} height={props.height} layout='responsive' />
             </div>
             <div className={styles["overlay"]}>
                 <div className={styles["card_text"]} style={{'--color': `${props.color}`}} >
@@ -253,7 +258,7 @@ export default function Home() {
                 <section>
                     <div className={styles["item-cont-range"]} data-toggle="off" style={{display: "flex; flex-direction: column"}}>
                         <label htmlFor="price">Price Range</label>
-                        <input type="range" className={`${styles.menu} ${styles.price}`} min="500" max="5000" />
+                        <input type="range" id='price' name='price' className={`${styles.menu} ${styles.price}`} min="500" max="5000" />
                     </div>
                     <div className={`${styles["item-cont"]} itemCont`} id="items-cont" data-toggle="off">
                         <span className={styles["menu"]} data-type="Colors">Color</span>

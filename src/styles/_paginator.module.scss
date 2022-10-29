@@ -11,7 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    // position: relative;
     div {
         height: auto;
         display: flex;
@@ -125,7 +125,6 @@
     top: -50%;
     left: 0;
     opacity: 0;
-    gap: 1rem;
     section:first-child {
         position: absolute;
         left: 7.5%;
@@ -202,18 +201,16 @@
     width: 60%;
     height: 87.5%;
     display: none;
-    grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(4, 1fr);
     gap: 5rem;
     opacity: 0;
     transition: all 0.5s;
     div {
-        width: 100%;
-        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        text-align: center;
         gap: 0.5rem;
     }
 }
@@ -222,12 +219,14 @@
     cursor: pointer;
     box-shadow: 0px 0.4rem 0.75rem #c5c5c5, 0px -0.4rem 0.75rem #fff;
     border-radius: 50%;
-    border: 4px solid #e8e8e8;
+    border: 0.25rem solid #e8e8e8;
     transition: all 0.5s;
+    width: 3.75rem;
+    height: 3.75rem;
 }
 
 .colors:hover {
-    transform: scale(1.2);
+    scale : 1.2;
 }
 
 .color-txt,
@@ -235,15 +234,18 @@
     color: #37474f;
 }
 
-// .category {
-//     position: absolute;
-//     left: 14.5%;
-// }
-
 .categories {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     cursor: pointer;
     border: 4px solid #e8e8e8;
     transition: all 0.5s;
+    span {
+        overflow: visible !important;
+    }
     img {
         transition: all 0.5s;
         width: 75%;
@@ -251,5 +253,128 @@
 }
 
 .categories:hover img {
-    transform: scale(1.2)absolute
+    scale : 1.2;
+}
+
+@media screen and (max-width: 1000px) {
+    .items-wrapper {
+        display: flex;
+        flex-direction: column !important;
+        justify-content: center;
+        align-items: center;
+        min-width: 100vw;
+        width: 100vw !important;
+        height: 0vh;
+        top: 150%;
+        left: 0;
+        section:first-child {
+            left: 0;
+            top: 10%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+        section:last-child {
+            width: 65vw;
+            height: 0%;
+            top: 35%;
+            left: 15.5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9;
+        }
+    }
+    .item-cont-range {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 15rem;
+        }
+    }
+    .dropdown {
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .colors {
+        width: 3.25rem;
+        height: 3.25rem;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .dropdown {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .colors {
+        width: 3rem;
+        height: 3rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+}
+
+@media screen and (max-width: 624px) {
+}
+
+@media screen and (max-width: 550px) {
+    
+    .next, .prev {
+        width: 8rem;
+        height: 2rem;
+        font-size: 1.65rem;
+    }
+    .paginator {
+        .filtercont {
+            width: 2.75rem;
+            height: 2.75rem;
+            border-radius: 1rem;
+        }
+        .filter {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+        .filterOff {
+            width: 1rem;
+            height: 1rem;
+        }
+    }
+    .colors {
+        width: 2.75rem;
+        height: 2.75rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .dropdown {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .paginator {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap-reverse;
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
 }

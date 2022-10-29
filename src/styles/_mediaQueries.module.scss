@@ -76,7 +76,7 @@
 
     .logo {
         font-size: 7rem;
-        margin: 10% 5% 22.5% 0;
+        margin: 10% 5% 12.5% 0;
     }
 
     .shopnow {
@@ -92,13 +92,19 @@
 
 @media screen and (max-width: 800px) {
     .logo {
-        margin: 12% 5% 22.5% 0;
+        margin: 12% 5% 15% 0;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .logo {
+        margin: 12% 5% 15% 0 !important;
     }
 }
 
 @media screen and (max-width: 624px) {
     .logo {
-        margin: 14% 5% 22.5% 0;
+        margin: 14% 5% 20% 0;
     }
 
     .prev, .next {
@@ -107,9 +113,8 @@
 }
 
 @media screen and (max-width: 550px) {
-    .paginator .filter {
-        transform: translateY(4.25rem);
-        left: 45.65%;
+    .logo {
+        margin: 21% 5% 22.5% 0 !important;
     }
 }
 
@@ -117,20 +122,19 @@
     .cards:hover .card_text {
         width: 7rem;
     }
+    .logo {
+        margin: 21% 5% 25% 0 !important;
+    }
 }
 
 @media screen and (max-width: 450px) {
     .logo {
-        margin: 21% 5% 22.5% 0;
+        margin: 21% 5% 25% 0 !important;
     }
 }
 
 @media screen and (max-width: 400px) {
-    .paginator .filter {
-        left: 43.5%;
-    }
-
     .logo {
-        margin: 22.5% 5% 22.5% 0;
+        margin: 22.5% 5% 32.5% 0 !important;
     }
 }

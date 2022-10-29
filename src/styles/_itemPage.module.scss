@@ -1,3 +1,187 @@
-.wrapper {
-    
+/* -----------------------------------ITEM_PAGE-------------------------------------*/
+@mixin flex($dir : row, $gap: 0rem) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: center;
+    align-items: center;
+    gap: $gap;
+}
+
+@mixin bg($url : '') {
+    background-image: url($url);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.itemWrapper {
+    width: 100vw;
+    height: auto;
+    @include flex($dir : column, $gap : 5rem);
+    justify-content: flex-start;
+    background-color: #ffffff;
+    .nav {
+        width: 96.5vw;
+        padding-left: 5rem;
+        padding-right: 6.5rem;
+        gap: 0;
+        .nav-left {
+            li {
+                a {
+                    padding: 0.25rem 0.5rem;
+                    color: rgba(0, 0, 0, 0.75);
+                }
+                a:hover {
+                    border-radius: 0.5rem;
+                    color: #ffffff;
+                    filter: none;
+                    background-color: rgba(0, 0, 0, 0.75);
+                }
+            }
+        }
+        .nav-right {
+            a {
+                color: #000;
+                filter: brightness(0.25);
+                transition: all 0.3s;
+            }
+            a:hover {
+                color: #ffffff;
+                filter: none;
+                background-color: rgba(0, 0, 0, 0.75);
+            }
+            .searchbox {
+                filter: brightness(0.25);
+            }
+        }
+        .navico {
+            padding: 0.25rem;
+        }
+        .navico:hover {
+            border-radius: 0.5rem;
+        }
+    }
+    .itemContent {
+        width: 100vw;
+        height: auto;
+        @include flex($dir : row, $gap : 5rem);
+        padding: 0 5rem;
+        background-color: #ffffff;
+        .itemImg {
+            width: 35vw;
+            height: 95vh;
+            @include bg($url : '../../public/clothes/m5.jpg')
+        }
+        .itemDetails {
+            width: 50vw;
+            height: 80vh;
+            @include flex($dir : column, $gap : 1.5rem);
+            .itemName {
+                width: 20rem;
+                height: auto;
+                font-size: 1.5rem;
+                font-weight: 600;
+                text-align: center;
+                @include flex;
+            }
+            .itemPrice {
+                width: 10rem;
+                height: auto;
+                font-size: 1rem;
+                text-align: center;
+                @include flex;
+            }
+            .itemColors {
+                width: auto;
+                height: auto;
+                @include flex($gap: 1.5rem);
+                span {
+                    width: 3rem;
+                    height: 3rem;
+                    border-radius: 100%;
+                    cursor: pointer;
+                }
+                .Color1 {
+                    background-color: #ffff9e;
+                }
+                .Color2 {
+                    background-color: #f8bbd0;
+                }
+            }
+            .itemSizes {
+                width: auto;
+                height: auto;
+                ul {
+                    @include flex($gap: 1.5rem);
+                    list-style: none;
+                    li {
+                        width: 2.5rem;
+                        height: 2.5rem;
+                        border-radius: 100%;
+                        cursor: pointer;
+                        @include flex;
+                        text-align: center;
+                        transition: all 0.3s;
+                    }
+                    li:hover {
+                        background-color: #32de84;
+                        color: #e8e8e8;
+                        scale: 1.1;
+                    }
+                }
+            }
+            .addItem {
+                width: 25vw;
+                height: 5vw;
+                @include flex($gap : 1rem);
+                font-size: 1.25rem;
+                font-family: 'Poppins', sans-serif;
+                color : #ffffff;
+                background-color: #32de84 !important;
+                border-color: transparent;
+                outline: none;
+                background-color: #ffffff;
+                cursor: pointer;
+                transition: all 0.3s;
+                span {
+                    display: block;
+                    width: 2.25rem;
+                    height: 2.25rem;
+                    @include bg($url : '../../public/shopnow.png');
+                    filter: brightness(0) invert(1);
+                    transition: all 0.3s;
+                }
+            }
+            .addItem:hover {
+                font-size: 1.5rem;
+                span {
+                    scale: 1.1;
+                }
+            }
+            .addtoWish {
+                width: 25vw;
+                height: 5vw;
+                @include flex($gap : 0.5rem);
+                font-size: 0.85rem;
+                font-family: 'Poppins', sans-serif;
+                color: #37474f;
+                cursor: pointer;
+                transition: all 0.3s;
+                span {
+                    display: block;
+                    width: 1rem;
+                    height: 1rem;
+                    @include bg($url : '../../public/like.png');
+                    transition: all 0.3s;
+                }
+            }
+            .addtoWish:hover {
+                scale: 1.1;
+            }
+        }
+    }
+    .footer {
+        width: 100vw;
+        height: auto;
+    }
 }
